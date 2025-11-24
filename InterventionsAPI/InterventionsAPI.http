@@ -1,0 +1,6 @@
+@InterventionsAPI_HostAddress = http://localhost:5253
+
+GET {{InterventionsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
