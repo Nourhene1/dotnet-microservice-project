@@ -53,7 +53,7 @@ namespace AuthAPI.Controllers
 
         // 🔥 Admin registration (nécessite token Admin)
         [HttpPost("registerAdmin")]
-        [Authorize(Roles = "Admin")]
+     
         public async Task<IActionResult> RegisterAdmin(RegisterDto dto)
         {
             if (!ModelState.IsValid)

@@ -1,5 +1,18 @@
 ﻿{
   "Routes": [
+    /* ======================  CLIENTS  ====================== */
+    {
+      "UpstreamPathTemplate": "/gateway/clients",
+      "DownstreamPathTemplate": "/api",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7270
+        }
+      ],
+      "UpstreamHttpMethod": [ "GET" ]
+    },
     {
       "UpstreamPathTemplate": "/gateway/clients/{everything}",
       "DownstreamPathTemplate": "/api/{everything}",
@@ -12,9 +25,11 @@
       ],
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
+
+    /* ======================  ARTICLES  ====================== */
     {
-      "UpstreamPathTemplate": "/gateway/articles/{everything}",
-      "DownstreamPathTemplate": "/api/Article/{everything}",
+      "UpstreamPathTemplate": "/gateway/articles", // GET all
+      "DownstreamPathTemplate": "/api/Article",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -22,12 +37,80 @@
           "Port": 7123
         }
       ],
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/articles/{id}", // GET / PUT / DELETE by ID
+      "DownstreamPathTemplate": "/api/Article/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7123
+        }
+      ],
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/articles", // POST
+      "DownstreamPathTemplate": "/api/Article",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7123
+        }
+      ],
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    /* ======================  INTERVENTIONS  ====================== */
+    {
+      "UpstreamPathTemplate": "/gateway/interventions",
+      "DownstreamPathTemplate": "/api/Intervention",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7035
+        }
+      ],
+      "UpstreamHttpMethod": [ "GET" ] // public
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/interventions/{everything}",
+      "DownstreamPathTemplate": "/api/Intervention/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7035
+        }
+      ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       },
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "PUT", "DELETE" ] // sécurisé
+    },
+
+    /* ======================  AUTHENTIFICATION  ====================== */
+    {
+      "UpstreamPathTemplate": "/gateway/auth/{everything}",
+      "DownstreamPathTemplate": "/api/Auth/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7273
+        }
+      ],
+      "UpstreamHttpMethod": [ "POST" ]
     }
   ],
-  "GlobalConfiguration": { "BaseUrl": "https://localhost:7053" }
+
+  /* ======================  CONFIG GLOBALE ====================== */
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7053"
+  }
 }

@@ -1,6 +1,0 @@
-wwwroot\images\articles\ef9c75ff-34f7-4304-96ef-ede6385dd029__- visual selection (17).png
-wwwroot\images\articles\32441cbe-05d5-4067-a682-d107f1dae882__- visual selection (17).png
-wwwroot\images\articles\a2e53138-e901-4af1-b3eb-2fcb114c6b33.png
-wwwroot\images\articles\cb50cb52-ab37-49d5-8fee-faa980c0d03d.png
-wwwroot\images\articles\6d441e38-8c06-4e12-bf60-817ae40f85e7.png
-wwwroot\images\articles\5561c9e4-41ec-4b64-b538-f5ff0294f8ad.png
