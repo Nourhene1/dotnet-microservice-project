@@ -17,6 +17,10 @@
       {
         "Path": "ApiGateway\\ApiGateway.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "InterventionsAPI\\InterventionsAPI.csproj",
+        "Action": "Start"
       }
     ]
   }

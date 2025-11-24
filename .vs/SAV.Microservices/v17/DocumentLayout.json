@@ -7,164 +7,39 @@
       "RelativeMoniker": "D:0:0:{25CA7CA9-CA9F-4C57-9483-13E4D58B7A31}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Msi\\AppData\\Local\\Temp\\.vsdbgsrc\\3b6e81e2752be2dfd0b4508895899d97f94d3b3a6e5bc5ebbb2b25a36f0042f7\\ThrowHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25CA7CA9-CA9F-4C57-9483-13E4D58B7A31}|ApiGateway\\ApiGateway.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25CA7CA9-CA9F-4C57-9483-13E4D58B7A31}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\interventionsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|solutionrelative:interventionsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25CA7CA9-CA9F-4C57-9483-13E4D58B7A31}|ApiGateway\\ApiGateway.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\apigateway\\apigateway.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{25CA7CA9-CA9F-4C57-9483-13E4D58B7A31}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\apigateway.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\interventionsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|solutionrelative:interventionsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\controllers\\articlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\controllers\\articlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\models\\authuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\models\\authuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\interventionsapi\\controllers\\interventioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|solutionrelative:interventionsapi\\controllers\\interventioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\interventionsapi\\models\\intervention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|solutionrelative:interventionsapi\\models\\intervention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\interventionsapi\\migrations\\20251124211043_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|solutionrelative:interventionsapi\\migrations\\20251124211043_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\interventionsapi\\data\\interventiondbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|solutionrelative:interventionsapi\\data\\interventiondbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\articlesapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\articlesapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\articlesapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\articlesapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\authapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\authapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\dtos\\articlecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\dtos\\articlecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\authapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\authapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\data\\authdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\data\\authdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\clientsapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\clientsapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\dtos\\articleupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\dtos\\articleupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\migrations\\20251123192705_addimageurltoarticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\migrations\\20251123192705_addimageurltoarticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\migrations\\20251123190732_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\migrations\\20251123190732_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\data\\articlesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\data\\articlesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\data\\clientsdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\data\\clientsdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\articlesapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C36C17-2CA9-49C4-8F2E-02308FEA1723}|ArticlesAPI\\ArticlesAPI.csproj|solutionrelative:articlesapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\clientsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\clientsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\models\\reclamation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\models\\reclamation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\controllers\\reclamationcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\controllers\\reclamationcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\dtos\\reclamationcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\dtos\\reclamationcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\models\\etatreclamation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\models\\etatreclamation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Migrations\\20251123172655_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ClientsAPI\\Migrations\\20251123172655_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\migrations\\20251123175413_addetattoreclamation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\migrations\\20251123175413_addetattoreclamation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\clientsapi\\migrations\\20251123172916_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58B003BD-2513-4B76-A171-76BB6A3F96DA}|ClientsAPI\\ClientsAPI.csproj|solutionrelative:clientsapi\\migrations\\20251123172916_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\authapi\\migrations\\20251123195122_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AADD0C4A-9326-4350-BCC3-AFD36A79D3B9}|AuthAPI\\AuthAPI.csproj|solutionrelative:authapi\\migrations\\20251123195122_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|c:\\users\\msi\\source\\repos\\dotnet projet microservice\\interventionsapi\\interventionsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EBCAA17B-AE77-4BC7-924E-19DA35DF5043}|InterventionsAPI\\InterventionsAPI.csproj|solutionrelative:interventionsapi\\interventionsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -174,7 +49,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -194,496 +69,133 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThrowHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Msi\\AppData\\Local\\Temp\\.vsdbgsrc\\3b6e81e2752be2dfd0b4508895899d97f94d3b3a6e5bc5ebbb2b25a36f0042f7\\ThrowHelper.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\3b6e81e2752be2dfd0b4508895899d97f94d3b3a6e5bc5ebbb2b25a36f0042f7\\ThrowHelper.cs",
+              "ToolTip": "C:\\Users\\Msi\\AppData\\Local\\Temp\\.vsdbgsrc\\3b6e81e2752be2dfd0b4508895899d97f94d3b3a6e5bc5ebbb2b25a36f0042f7\\ThrowHelper.cs [Lecture seule]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\3b6e81e2752be2dfd0b4508895899d97f94d3b3a6e5bc5ebbb2b25a36f0042f7\\ThrowHelper.cs [Lecture seule]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T21:39:33.689Z",
+              "EditorCaption": " [Lecture seule]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Ocelot.json",
               "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ApiGateway\\Ocelot.json",
               "RelativeDocumentMoniker": "ApiGateway\\Ocelot.json",
               "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ApiGateway\\Ocelot.json",
               "RelativeToolTip": "ApiGateway\\Ocelot.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-23T17:09:05.923Z",
+              "WhenOpened": "2025-11-24T21:39:18.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ArticleController.cs",
+              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Controllers\\ArticleController.cs",
+              "RelativeDocumentMoniker": "ArticlesAPI\\Controllers\\ArticleController.cs",
+              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Controllers\\ArticleController.cs",
+              "RelativeToolTip": "ArticlesAPI\\Controllers\\ArticleController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T21:28:37.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20251124211043_initial.cs",
+              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Migrations\\20251124211043_initial.cs",
+              "RelativeDocumentMoniker": "InterventionsAPI\\Migrations\\20251124211043_initial.cs",
+              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Migrations\\20251124211043_initial.cs",
+              "RelativeToolTip": "InterventionsAPI\\Migrations\\20251124211043_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T21:10:43.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InterventionController.cs",
+              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Controllers\\InterventionController.cs",
+              "RelativeDocumentMoniker": "InterventionsAPI\\Controllers\\InterventionController.cs",
+              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Controllers\\InterventionController.cs",
+              "RelativeToolTip": "InterventionsAPI\\Controllers\\InterventionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T21:09:56.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ApiGateway\\Program.cs",
-              "RelativeDocumentMoniker": "ApiGateway\\Program.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ApiGateway\\Program.cs",
-              "RelativeToolTip": "ApiGateway\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAmwDYAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Program.cs",
+              "RelativeDocumentMoniker": "InterventionsAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Program.cs",
+              "RelativeToolTip": "InterventionsAPI\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:10:49.197Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "AuthAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAUwDcAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:44:46.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\DTOs\\LoginDto.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\DTOs\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\DTOs\\LoginDto.cs",
-              "RelativeToolTip": "AuthAPI\\DTOs\\LoginDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:43:26.237Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApiGateway.http",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ApiGateway\\ApiGateway.http",
-              "RelativeDocumentMoniker": "ApiGateway\\ApiGateway.http",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ApiGateway\\ApiGateway.http",
-              "RelativeToolTip": "ApiGateway\\ApiGateway.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-11-23T20:48:43.336Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "AuthAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\appsettings.json",
-              "RelativeToolTip": "AuthAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-23T19:40:17.625Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClientController.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Controllers\\ClientController.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\Controllers\\ClientController.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Controllers\\ClientController.cs",
-              "RelativeToolTip": "ClientsAPI\\Controllers\\ClientController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:30:44.224Z",
+              "WhenOpened": "2025-11-24T21:09:28.054Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthResponseDto.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\DTOs\\AuthResponseDto.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\DTOs\\AuthResponseDto.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\DTOs\\AuthResponseDto.cs",
-              "RelativeToolTip": "AuthAPI\\DTOs\\AuthResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:43:47.197Z"
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "InterventionsAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\appsettings.json",
+              "RelativeToolTip": "InterventionsAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-24T21:09:00.719Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\Program.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\Program.cs",
-              "RelativeToolTip": "AuthAPI\\Program.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAABwAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "InterventionDbContext .cs",
+              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Data\\InterventionDbContext .cs",
+              "RelativeDocumentMoniker": "InterventionsAPI\\Data\\InterventionDbContext .cs",
+              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Data\\InterventionDbContext .cs",
+              "RelativeToolTip": "InterventionsAPI\\Data\\InterventionDbContext .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:44:09.564Z"
+              "WhenOpened": "2025-11-24T21:08:41.786Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AuthUser.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\Models\\AuthUser.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\Models\\AuthUser.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\Models\\AuthUser.cs",
-              "RelativeToolTip": "AuthAPI\\Models\\AuthUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:34:47.826Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ArticleController.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Controllers\\ArticleController.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\Controllers\\ArticleController.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Controllers\\ArticleController.cs",
-              "RelativeToolTip": "ArticlesAPI\\Controllers\\ArticleController.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAwwJwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:02:43.177Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Program.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Program.cs",
-              "RelativeToolTip": "ArticlesAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T18:02:13.261Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ArticlesAPI.http",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\ArticlesAPI.http",
-              "RelativeDocumentMoniker": "ArticlesAPI\\ArticlesAPI.http",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\ArticlesAPI.http",
-              "RelativeToolTip": "ArticlesAPI\\ArticlesAPI.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-11-23T18:04:25.637Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ArticleCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\DTOs\\ArticleCreateDto.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\DTOs\\ArticleCreateDto.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\DTOs\\ArticleCreateDto.cs",
-              "RelativeToolTip": "ArticlesAPI\\DTOs\\ArticleCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:16:27.972Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "ArticlesAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\appsettings.json",
-              "RelativeToolTip": "ArticlesAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-23T18:01:38.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ArticlesAPI.csproj",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\ArticlesAPI.csproj",
-              "RelativeDocumentMoniker": "ArticlesAPI\\ArticlesAPI.csproj",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\ArticlesAPI.csproj",
-              "RelativeToolTip": "ArticlesAPI\\ArticlesAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-23T17:58:06.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AuthAPI.csproj",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\AuthAPI.csproj",
-              "RelativeDocumentMoniker": "AuthAPI\\AuthAPI.csproj",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\AuthAPI.csproj",
-              "RelativeToolTip": "AuthAPI\\AuthAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-23T19:07:05.902Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AuthAPI.http",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\AuthAPI.http",
-              "RelativeDocumentMoniker": "AuthAPI\\AuthAPI.http",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\AuthAPI.http",
-              "RelativeToolTip": "AuthAPI\\AuthAPI.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-11-23T19:40:17.21Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "20251123195122_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\Migrations\\20251123195122_InitialCreate.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\Migrations\\20251123195122_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\Migrations\\20251123195122_InitialCreate.cs",
-              "RelativeToolTip": "AuthAPI\\Migrations\\20251123195122_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:51:22.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\WeatherForecast.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\WeatherForecast.cs",
-              "RelativeToolTip": "AuthAPI\\WeatherForecast.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:44:07.725Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\DTOs\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "AuthAPI\\DTOs\\RegisterDto.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\DTOs\\RegisterDto.cs",
-              "RelativeToolTip": "AuthAPI\\DTOs\\RegisterDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:43:07.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AuthDbContext .cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\data\\AuthDbContext .cs",
-              "RelativeDocumentMoniker": "AuthAPI\\data\\AuthDbContext .cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\AuthAPI\\data\\AuthDbContext .cs",
-              "RelativeToolTip": "AuthAPI\\data\\AuthDbContext .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:41:59.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ClientsAPI.http",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\ClientsAPI.http",
-              "RelativeDocumentMoniker": "ClientsAPI\\ClientsAPI.http",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\ClientsAPI.http",
-              "RelativeToolTip": "ClientsAPI\\ClientsAPI.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-11-23T17:19:47.783Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "ClientsAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\appsettings.json",
-              "RelativeToolTip": "ClientsAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-23T17:25:53.739Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ArticleUpdateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\DTOs\\ArticleUpdateDto.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\DTOs\\ArticleUpdateDto.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\DTOs\\ArticleUpdateDto.cs",
-              "RelativeToolTip": "ArticlesAPI\\DTOs\\ArticleUpdateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:32:04.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "20251123192705_AddImageUrlToArticle.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Migrations\\20251123192705_AddImageUrlToArticle.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\Migrations\\20251123192705_AddImageUrlToArticle.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Migrations\\20251123192705_AddImageUrlToArticle.cs",
-              "RelativeToolTip": "ArticlesAPI\\Migrations\\20251123192705_AddImageUrlToArticle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:27:06.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Article.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Models\\Article.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\Models\\Article.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Models\\Article.cs",
-              "RelativeToolTip": "ArticlesAPI\\Models\\Article.cs",
+              "Title": "Intervention.cs",
+              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Models\\Intervention.cs",
+              "RelativeDocumentMoniker": "InterventionsAPI\\Models\\Intervention.cs",
+              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\Models\\Intervention.cs",
+              "RelativeToolTip": "InterventionsAPI\\Models\\Intervention.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T18:00:14.164Z"
+              "WhenOpened": "2025-11-24T21:08:05.816Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "20251123190732_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Migrations\\20251123190732_InitialCreate.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\Migrations\\20251123190732_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Migrations\\20251123190732_InitialCreate.cs",
-              "RelativeToolTip": "ArticlesAPI\\Migrations\\20251123190732_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:07:33.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Program.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Program.cs",
-              "RelativeToolTip": "ClientsAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:19:44.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ClientsDbContext .cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Data\\ClientsDbContext .cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\Data\\ClientsDbContext .cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Data\\ClientsDbContext .cs",
-              "RelativeToolTip": "ClientsAPI\\Data\\ClientsDbContext .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:23:48.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ArticlesDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Data\\ArticlesDbContext.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\Data\\ArticlesDbContext.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\Data\\ArticlesDbContext.cs",
-              "RelativeToolTip": "ArticlesAPI\\Data\\ArticlesDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T18:00:54.923Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "ArticlesAPI\\WeatherForecast.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ArticlesAPI\\WeatherForecast.cs",
-              "RelativeToolTip": "ArticlesAPI\\WeatherForecast.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T18:04:22.353Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ReclamationCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\DTOs\\ReclamationCreateDto.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\DTOs\\ReclamationCreateDto.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\DTOs\\ReclamationCreateDto.cs",
-              "RelativeToolTip": "ClientsAPI\\DTOs\\ReclamationCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:51:36.987Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ReclamationController .cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Controllers\\ReclamationController .cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\Controllers\\ReclamationController .cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Controllers\\ReclamationController .cs",
-              "RelativeToolTip": "ClientsAPI\\Controllers\\ReclamationController .cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAswDEAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:31:25.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Reclamation.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\models\\Reclamation.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\models\\Reclamation.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\models\\Reclamation.cs",
-              "RelativeToolTip": "ClientsAPI\\models\\Reclamation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:23:09.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "ClientsAPI.csproj",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\ClientsAPI.csproj",
-              "RelativeDocumentMoniker": "ClientsAPI\\ClientsAPI.csproj",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\ClientsAPI.csproj",
-              "RelativeToolTip": "ClientsAPI\\ClientsAPI.csproj",
+              "DocumentIndex": 9,
+              "Title": "InterventionsAPI",
+              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\InterventionsAPI.csproj",
+              "RelativeDocumentMoniker": "InterventionsAPI\\InterventionsAPI.csproj",
+              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\InterventionsAPI\\InterventionsAPI.csproj",
+              "RelativeToolTip": "InterventionsAPI\\InterventionsAPI.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-23T17:22:06.948Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "20251123175413_AddEtatToReclamation.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Migrations\\20251123175413_AddEtatToReclamation.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\Migrations\\20251123175413_AddEtatToReclamation.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Migrations\\20251123175413_AddEtatToReclamation.cs",
-              "RelativeToolTip": "ClientsAPI\\Migrations\\20251123175413_AddEtatToReclamation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:54:14.166Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "EtatReclamation.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\models\\EtatReclamation.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\models\\EtatReclamation.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\models\\EtatReclamation.cs",
-              "RelativeToolTip": "ClientsAPI\\models\\EtatReclamation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:53:22.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "20251123172655_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Migrations\\20251123172655_InitialCreate.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\Migrations\\20251123172655_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Migrations\\20251123172655_InitialCreate.cs",
-              "RelativeToolTip": "ClientsAPI\\Migrations\\20251123172655_InitialCreate.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:26:55.484Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "20251123172916_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Migrations\\20251123172916_InitialCreate.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\Migrations\\20251123172916_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\Migrations\\20251123172916_InitialCreate.cs",
-              "RelativeToolTip": "ClientsAPI\\Migrations\\20251123172916_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:29:17.224Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\models\\Client.cs",
-              "RelativeDocumentMoniker": "ClientsAPI\\models\\Client.cs",
-              "ToolTip": "C:\\Users\\Msi\\source\\repos\\dotnet projet microservice\\ClientsAPI\\models\\Client.cs",
-              "RelativeToolTip": "ClientsAPI\\models\\Client.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:22:33.83Z"
+              "WhenOpened": "2025-11-24T21:05:58.443Z",
+              "EditorCaption": ""
             }
           ]
         }

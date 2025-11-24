@@ -7,7 +7,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5142
+          "Port": 7270
         }
       ],
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]

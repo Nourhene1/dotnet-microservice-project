@@ -50,3 +50,4 @@ C:\Users\Msi\source\repos\dotnet projet microservice\ApiGateway\bin\Debug\net8.0
 C:\Users\Msi\source\repos\dotnet projet microservice\ApiGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Msi\source\repos\dotnet projet microservice\ApiGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Msi\source\repos\dotnet projet microservice\ApiGateway\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Msi\source\repos\dotnet projet microservice\ApiGateway\obj\Debug\net8.0\ApiGateway.sourcelink.json

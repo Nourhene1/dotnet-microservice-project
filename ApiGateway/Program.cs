@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +24,8 @@ builder.Services
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddOcelot(builder.Configuration);
+builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+builder.Services.AddOcelot();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -48,7 +50,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Ocelot doit être exécuté AVANT app.Run()
-await app.UseOcelot();
+app.UseOcelot().Wait();
 
 app.Run();

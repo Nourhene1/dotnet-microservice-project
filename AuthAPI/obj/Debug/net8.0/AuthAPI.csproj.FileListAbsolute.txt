@@ -177,3 +177,4 @@ C:\Users\Msi\source\repos\dotnet projet microservice\AuthAPI\bin\Debug\net8.0\ru
 C:\Users\Msi\source\repos\dotnet projet microservice\AuthAPI\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Msi\source\repos\dotnet projet microservice\AuthAPI\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\Msi\source\repos\dotnet projet microservice\AuthAPI\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Msi\source\repos\dotnet projet microservice\AuthAPI\obj\Debug\net8.0\AuthAPI.sourcelink.json
