@@ -1,9 +1,9 @@
 ﻿{
   "Routes": [
-    /* ======================  CLIENTS  ====================== */
+    /* ====================== PROFILE (AuthAPI) ====================== */
     {
-      "UpstreamPathTemplate": "/gateway/clients",
-      "DownstreamPathTemplate": "/api",
+      "UpstreamPathTemplate": "/gateway/profile/me",
+      "DownstreamPathTemplate": "/api/Auth/profile/me",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -11,8 +11,14 @@
           "Port": 7270
         }
       ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
       "UpstreamHttpMethod": [ "GET" ]
     },
+
+    /* ====================== CLIENTS ====================== */
     {
       "UpstreamPathTemplate": "/gateway/clients/{everything}",
       "DownstreamPathTemplate": "/api/{everything}",
@@ -26,9 +32,35 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
 
-    /* ======================  ARTICLES  ====================== */
+    /* ====================== RECLAMATIONS ====================== */
     {
-      "UpstreamPathTemplate": "/gateway/articles", // GET all
+      "UpstreamPathTemplate": "/gateway/reclamations",
+      "DownstreamPathTemplate": "/api/Reclamation",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7270
+        }
+      ],
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/reclamations/{id}",
+      "DownstreamPathTemplate": "/api/Reclamation/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7270
+        }
+      ],
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    },
+
+    /* ====================== ARTICLES ====================== */
+    {
+      "UpstreamPathTemplate": "/gateway/articles",
       "DownstreamPathTemplate": "/api/Article",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -37,10 +69,11 @@
           "Port": 7123
         }
       ],
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     },
+
     {
-      "UpstreamPathTemplate": "/gateway/articles/{id}", // GET / PUT / DELETE by ID
+      "UpstreamPathTemplate": "/gateway/articles/{id}",
       "DownstreamPathTemplate": "/api/Article/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -51,20 +84,8 @@
       ],
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
     },
-    {
-      "UpstreamPathTemplate": "/gateway/articles", // POST
-      "DownstreamPathTemplate": "/api/Article",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7123
-        }
-      ],
-      "UpstreamHttpMethod": [ "POST" ]
-    },
 
-    /* ======================  INTERVENTIONS  ====================== */
+    /* ====================== INTERVENTIONS ====================== */
     {
       "UpstreamPathTemplate": "/gateway/interventions",
       "DownstreamPathTemplate": "/api/Intervention",
@@ -91,10 +112,10 @@
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       },
-      "UpstreamHttpMethod": [ "POST", "PUT", "DELETE" ] // sécurisé
+      "UpstreamHttpMethod": [ "POST", "PUT", "DELETE" ]
     },
 
-    /* ======================  AUTHENTIFICATION  ====================== */
+    /* ====================== AUTHENTIFICATION ====================== */
     {
       "UpstreamPathTemplate": "/gateway/auth/{everything}",
       "DownstreamPathTemplate": "/api/Auth/{everything}",
@@ -109,7 +130,6 @@
     }
   ],
 
-  /* ======================  CONFIG GLOBALE ====================== */
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:7053"
   }

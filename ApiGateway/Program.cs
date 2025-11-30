@@ -5,7 +5,16 @@ using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy
+            .WithOrigins("http://localhost:5173") // ton frontend
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()
+    );
+});
 // ================== SERVICES ==================
 builder.Services.AddControllers();
 
@@ -41,6 +50,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+// 🔥 AJOUT ICI
+app.UseCors("AllowFrontend");
 
 // 🔥 Très important : d'abord authentification
 app.UseAuthentication();  // ⬅️ AJOUT ICI
