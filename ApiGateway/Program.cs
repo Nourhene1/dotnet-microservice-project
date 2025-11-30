@@ -62,5 +62,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseOcelot().Wait();
+app.UseCors("AllowReact");
 
 app.Run();

@@ -20,8 +20,8 @@
 
     /* ====================== CLIENTS ====================== */
     {
-      "UpstreamPathTemplate": "/gateway/clients/{everything}",
-      "DownstreamPathTemplate": "/api/{everything}",
+      "UpstreamPathTemplate": "/gateway/clients",
+      "DownstreamPathTemplate": "/api/Client",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -29,8 +29,29 @@
           "Port": 7270
         }
       ],
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     },
+    {
+      "UpstreamPathTemplate": "/gateway/clients/{id}",
+      "DownstreamPathTemplate": "/api/Client/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7270
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    },
+
 
     /* ====================== RECLAMATIONS ====================== */
     {
