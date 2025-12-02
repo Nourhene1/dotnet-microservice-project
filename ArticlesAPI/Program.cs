@@ -2,9 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// ===========================
+// CORS
+// ===========================
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
@@ -15,18 +20,22 @@ builder.Services.AddCors(options =>
     );
 });
 
-
-
-
-// Add services to the container.
-
+// ===========================
+// CONTROLLERS
+// ===========================
 builder.Services.AddControllers();
+
+// ===========================
+// JWT CONFIG
+// ===========================
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
@@ -38,56 +47,64 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ClockSkew = TimeSpan.Zero
         };
     });
+
+// ===========================
+// AUTHORIZATION
+// ===========================
+builder.Services.AddAuthorization();
+
+// ===========================
+// SWAGGER + JWT
+// ===========================
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Articles API",
         Version = "v1"
     });
 
-    // 🔐 Ajout du schéma de sécurité JWT
-    c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    // 🔐 JWT Security Scheme (CORRECT)
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
         BearerFormat = "JWT",
-        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-        Description = "🔑 Token JWT (ex : 'Bearer eyJhbGciOiJIUzI1…')"
+        In = ParameterLocation.Header,
+        Description = "🔑 Entrer votre token sans 'Bearer' (Swagger l'ajoute automatiquement)"
     });
 
-    // 📌 Appliquer l'authentification sur toutes les méthodes protégées
-    c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
-            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            new OpenApiSecurityScheme
             {
-                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                Reference = new OpenApiReference
                 {
-                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Type = ReferenceType.SecurityScheme,
                     Id = "Bearer"
                 }
             },
-            new string[] { }
+            Array.Empty<string>()
         }
     });
 });
 
-
-builder.Services.AddAuthorization();
-
+// ===========================
+// DB
+// ===========================
 builder.Services.AddDbContext<ArticlesDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// ===========================
+// MIDDLEWARES
+// ===========================
 app.UseCors("AllowFrontend");
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -95,9 +112,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication(); // 👉 avant Authorization
 
-
+app.UseAuthentication(); // IMPORTANT
 app.UseAuthorization();
 
 app.UseStaticFiles();
