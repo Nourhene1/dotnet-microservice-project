@@ -10,7 +10,5 @@ namespace ClientsAPI.DTOs
         [Required]
         public string Description { get; set; }
 
-        [Required]
-        public int ClientId { get; set; }
     }
 }

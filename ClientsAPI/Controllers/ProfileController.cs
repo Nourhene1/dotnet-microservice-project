@@ -17,39 +17,47 @@ public class ProfileController : ControllerBase
     }
 
     // 🔹 Récupérer le profil de l’utilisateur connecté
+  
     [Authorize]
     [HttpGet("me")]
     public async Task<IActionResult> GetMyProfile()
     {
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        Console.WriteLine("🔎 ID JWT = " + userId);
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
 
-        if (userId == null) return Unauthorized("Aucun ID dans le token.");
+        if (email == null)
+            return Unauthorized("Pas d’email dans le token");
 
-        var client = await _context.Clients.FindAsync(int.Parse(userId));
-        Console.WriteLine("🟢 Client trouvé = " + client);
+        var client = await _context.Clients.FirstOrDefaultAsync(c => c.Email == email);
 
-        return client != null ? Ok(client) : NotFound("Utilisateur introuvable.");
+        if (client == null)
+            return NotFound("Client introuvable");
+
+        return Ok(client);
     }
+
 
 
     // 🔹 Modifier uniquement téléphone + adresse
     [Authorize]
-    [HttpPut]
+    [HttpPut("me")]
     public async Task<IActionResult> UpdateMyProfile([FromBody] UpdateProfileDto dto)
     {
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId == null)
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+
+        if (email == null)
             return Unauthorized();
 
-        var client = await _context.Clients.FindAsync(int.Parse(userId));
+        var client = await _context.Clients.FirstOrDefaultAsync(c => c.Email == email);
+
         if (client == null)
-            return NotFound();
+            return NotFound("Client introuvable");
 
         client.Telephone = dto.Telephone ?? client.Telephone;
         client.Adresse = dto.Adresse ?? client.Adresse;
 
         await _context.SaveChangesAsync();
+
         return Ok("Profil mis à jour !");
     }
+
 }

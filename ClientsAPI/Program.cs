@@ -10,15 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 // ===========================
 // 🌐 CORS
 // ===========================
+// Ajoutez cette configuration au début de votre Program.cs
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
-        policy => policy
-            .WithOrigins("http://localhost:5173")
+        builder => builder
+            .WithOrigins("http://localhost:5174")
             .AllowAnyMethod()
             .AllowAnyHeader()
-    );
+            .AllowCredentials());
 });
+
 
 // ===========================
 // 📌 BDD
@@ -63,6 +65,8 @@ builder.Services.AddControllers();
 // 📌 SWAGGER + SECURITY (VERSION AUTHAPI)
 // ===========================
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddHttpClient();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo

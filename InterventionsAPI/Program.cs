@@ -18,21 +18,24 @@ builder.Services.AddDbContext<InterventionDbContext>(options =>
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        var jwtSettings = builder.Configuration.GetSection("Jwt");
+        options.RequireHttpsMetadata = false;
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+
             ValidateAudience = true,
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+
             ValidateLifetime = true,
+
             ValidateIssuerSigningKey = true,
-            ValidIssuer = jwtSettings["Issuer"],
-            ValidAudience = jwtSettings["Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(jwtSettings["Key"])
-            ),
-            ClockSkew = TimeSpan.Zero // optionnel mais mieux pour expiration exacte
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])
+            )
         };
     });
+
 
 builder.Services.AddAuthorization();
 

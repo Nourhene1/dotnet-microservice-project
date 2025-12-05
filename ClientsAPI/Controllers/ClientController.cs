@@ -11,12 +11,13 @@ namespace ClientsAPI.Controllers
     public class ClientController : ControllerBase
     {
         private readonly ClientsDbContext _context;
+        private readonly HttpClient _http;
 
-        public ClientController(ClientsDbContext context)
+        public ClientController(ClientsDbContext context, HttpClient http)
         {
             _context = context;
+            _http = http;
         }
-
         // 🔹 Accessible uniquement à l’Admin (par ex. SAV)
         [Authorize(Roles = "Admin")]
         [HttpGet]
@@ -50,9 +51,42 @@ namespace ClientsAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            // 1️⃣ Enregistrement du client métier
             _context.Clients.Add(client);
             await _context.SaveChangesAsync();
-            return Ok(client);
+
+            // 2️⃣ Construction des données pour AuthAPI
+            var password = client.Telephone; // ou random si tu veux
+            var authUserPayload = new
+            {
+                FullName = $"{client.Nom} {client.Prenom}",
+                Email = client.Email,
+                Password = password,
+                Role = "Client"
+            };
+
+            // 3️⃣ Appel HTTP vers AuthAPI
+            var response = await _http.PostAsJsonAsync(
+                "https://localhost:7273/api/auth/register",  // URL AuthAPI
+                authUserPayload
+            );
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return BadRequest("Le client est créé, mais la création Auth a échoué.");
+            }
+
+            return Ok(new
+            {
+                client,
+                message = "Client créé + compte Auth créé automatiquement",
+                loginPassword = password  // 💡 utile à afficher à l’admin
+            });
         }
+
+
+        
+
     }
+
 }

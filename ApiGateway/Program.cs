@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
-using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
@@ -20,16 +21,28 @@ builder.Services.AddControllers();
 
 // 🔐 Authentification JWT pour Gateway
 builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
-        options.Authority = "https://localhost:7273"; // AuthAPI
         options.RequireHttpsMetadata = false;
+
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateAudience = false // ⚠️ on ignore l'Audience pour simplifier
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+
+            ValidateLifetime = true,
+
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])
+            )
         };
     });
+
 
 builder.Services.AddAuthorization();
 
@@ -62,6 +75,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseOcelot().Wait();
-app.UseCors("AllowReact");
 
 app.Run();
