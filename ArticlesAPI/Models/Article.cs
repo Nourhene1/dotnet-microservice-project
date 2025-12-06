@@ -7,11 +7,16 @@
         public string Reference { get; set; }
         public string Description { get; set; }
         public DateTime DateAchat { get; set; }
-        public int DureeGarantieMois { get; set; } // ex: 24 mois
-                                                   // 🟢 Ajouter cette ligne (comme ton champ Image dans MVC)
+        public int DureeGarantieMois { get; set; }
         public string? ImageUrl { get; set; }
 
-        // 🔎 Propriété calculée
+        // 🆕 STOCK
+        public int QuantiteStock { get; set; }
+
+        // 🆕 PRIX
+        public decimal PrixUnitaire { get; set; }
+
+        // Garantie
         public bool EstSousGarantie =>
             DateTime.Now <= DateAchat.AddMonths(DureeGarantieMois);
     }

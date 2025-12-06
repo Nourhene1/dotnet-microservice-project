@@ -1,7 +1,7 @@
 ﻿using ArticlesAPI.Data;
 using ArticlesAPI.DTOs;
 using ArticlesAPI.Models;
-using Microsoft.AspNetCore.Authorization;  // <-- AJOUT ICI
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,7 +39,7 @@ namespace ArticlesAPI.Controllers
             return Ok(article);
         }
 
-        // 🔐 Privé – Nécessite un token
+        // 🔐 CREATE - ADMIN
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create([FromForm] ArticleCreateDto dto)
@@ -48,6 +48,8 @@ namespace ArticlesAPI.Controllers
                 return BadRequest(ModelState);
 
             string imagePath = null;
+
+            // 📷 upload file
             if (dto.ImageFile != null)
             {
                 string uploadsDir = Path.Combine(_env.WebRootPath, "images/articles");
@@ -63,6 +65,7 @@ namespace ArticlesAPI.Controllers
                 imagePath = "/images/articles/" + uniqueName;
             }
 
+            // ⭐ création article FULL DATA
             var article = new Article
             {
                 Nom = dto.Nom,
@@ -70,6 +73,8 @@ namespace ArticlesAPI.Controllers
                 Description = dto.Description,
                 DateAchat = dto.DateAchat,
                 DureeGarantieMois = dto.DureeGarantieMois,
+                QuantiteStock = dto.QuantiteStock,   // ⭐ AJOUTÉ
+                PrixUnitaire = dto.PrixUnitaire,     // ⭐ AJOUTÉ
                 ImageUrl = imagePath
             };
 
@@ -79,7 +84,7 @@ namespace ArticlesAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = article.Id }, article);
         }
 
-        // 🔓 Public (optionnel, tu peux aussi protéger)
+        // 🔓 Vérifier garantie
         [AllowAnonymous]
         [HttpGet("{id}/sousGarantie")]
         public async Task<IActionResult> EstSousGarantie(int id)
@@ -90,7 +95,7 @@ namespace ArticlesAPI.Controllers
             return Ok(article.EstSousGarantie);
         }
 
-        // ✏️ Mise à jour - nécessite authentification
+        // ✏ UPDATE - ADMIN
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromForm] ArticleUpdateDto dto)
@@ -99,12 +104,18 @@ namespace ArticlesAPI.Controllers
             if (article == null)
                 return NotFound("Article introuvable");
 
+            // 🔁 MAPPING FIELDS OPTIONNELS
             if (dto.Nom != null) article.Nom = dto.Nom;
             if (dto.Reference != null) article.Reference = dto.Reference;
             if (dto.Description != null) article.Description = dto.Description;
             if (dto.DateAchat.HasValue) article.DateAchat = dto.DateAchat.Value;
             if (dto.DureeGarantieMois.HasValue) article.DureeGarantieMois = dto.DureeGarantieMois.Value;
 
+            // ⭐⭐ UPDATE STOCK + PRIX
+            if (dto.QuantiteStock.HasValue) article.QuantiteStock = dto.QuantiteStock.Value;
+            if (dto.PrixUnitaire.HasValue) article.PrixUnitaire = dto.PrixUnitaire.Value;
+
+            // 📷 upload image
             if (dto.ImageFile != null)
             {
                 if (!string.IsNullOrEmpty(article.ImageUrl))
@@ -131,7 +142,7 @@ namespace ArticlesAPI.Controllers
             return Ok(article);
         }
 
-        // ❌ Suppression - réservé aux utilisateurs authentifiés
+        // ❌ DELETE - ADMIN
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
@@ -140,6 +151,7 @@ namespace ArticlesAPI.Controllers
             if (article == null)
                 return NotFound("Article introuvable");
 
+            // 📷 delete image if exists
             if (!string.IsNullOrEmpty(article.ImageUrl))
             {
                 string imagePath = Path.Combine(_env.WebRootPath, article.ImageUrl.TrimStart('/'));
@@ -150,7 +162,26 @@ namespace ArticlesAPI.Controllers
             _context.Articles.Remove(article);
             await _context.SaveChangesAsync();
 
-            return NoContent(); // 204
+            return NoContent();
         }
+
+
+        [Authorize(Roles = "Admin,Client,Technicien")]
+        [HttpPut("{id}/decrease-stock")]
+        public async Task<IActionResult> DecreaseStock(int id, [FromBody] int quantity)
+        {
+            var article = await _context.Articles.FindAsync(id);
+            if (article == null)
+                return NotFound("Article introuvable");
+
+            if (article.QuantiteStock < quantity)
+                return BadRequest("Stock insuffisant");
+
+            article.QuantiteStock -= quantity;
+            await _context.SaveChangesAsync();
+
+            return Ok(article.QuantiteStock);
+        }
+
     }
 }

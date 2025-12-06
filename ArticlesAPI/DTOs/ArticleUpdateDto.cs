@@ -11,6 +11,12 @@ namespace ArticlesAPI.DTOs
         public DateTime? DateAchat { get; set; }
         public int? DureeGarantieMois { get; set; }
 
+        // ⭐⭐⭐ PERMETTRE LA MISE À JOUR STOCK
+        public int? QuantiteStock { get; set; }
+
+        // ⭐⭐⭐ PERMETTRE MISE À JOUR PRIX
+        public decimal? PrixUnitaire { get; set; }
+
         // 🖼️ Image facultative
         public IFormFile? ImageFile { get; set; }
     }

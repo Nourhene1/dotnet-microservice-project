@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ArticlesAPI.DTOs
@@ -17,6 +18,15 @@ namespace ArticlesAPI.DTOs
 
         public int DureeGarantieMois { get; set; }
 
-        public IFormFile? ImageFile { get; set; } // 🔥 fichier envoyé via Swagger
+        // ⭐⭐⭐ AJOUT QUANTITÉ EN STOCK
+        [Required]
+        public int QuantiteStock { get; set; }
+
+        // ⭐⭐⭐ AJOUT PRIX UNITAIRE
+        [Required]
+        public decimal PrixUnitaire { get; set; }
+
+        // 🔥 fichier envoyé via Swagger
+        public IFormFile? ImageFile { get; set; }
     }
 }
