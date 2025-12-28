@@ -2,120 +2,32 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OrdersAPI.Data;
-using OrdersAPI.Models;
 using OrdersAPI.DTOs;
+using OrdersAPI.Models;
 using System.Security.Claims;
 
 namespace OrdersAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class OrdersController : ControllerBase
     {
         private readonly OrdersDbContext _context;
-        private readonly HttpClient _http;
+        private readonly HttpClient _httpClient; // pour récupérer prix ArticlesAPI
 
-        // 👉 URL service Articles
-        private const string ARTICLES_URL = "https://localhost:7123/api/Article";
-
-        public OrdersController(
-            OrdersDbContext context,
-            IHttpClientFactory httpFactory
-        )
+        public OrdersController(OrdersDbContext context, IHttpClientFactory httpFactory)
         {
             _context = context;
-            _http = httpFactory.CreateClient();
+            _httpClient = httpFactory.CreateClient();
         }
 
-        // ⭐ CREER UNE COMMANDE À PARTIR DU PANIER (client connecté)
-        [HttpPost("me/create-from-cart")]
-        public async Task<ActionResult<Order>> CreateOrderFromCart()
-        {
-            // ➤ Identifier le client
-            string? userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userIdString))
-                return Unauthorized("Utilisateur non identifié.");
+        // ================= CLIENT =================
 
-            int clientId = int.Parse(userIdString);
-
-            // ➤ Charger panier
-            var cart = await _context.Carts
-                .Include(c => c.Items)
-                .FirstOrDefaultAsync(c => c.ClientId == clientId);
-
-            if (cart == null || !cart.Items.Any())
-                return BadRequest("Panier vide.");
-
-            // ============================================
-            // ⭐ 1) Vérification du stock côté ArticlesAPI
-            // ============================================
-            foreach (var cartItem in cart.Items)
-            {
-                string urlCheck = $"{ARTICLES_URL}/{cartItem.ArticleId}";
-                var resp = await _http.GetAsync(urlCheck);
-
-                if (!resp.IsSuccessStatusCode)
-                    return BadRequest($"Article ID={cartItem.ArticleId} introuvable.");
-
-                var article = await resp.Content.ReadFromJsonAsync<ArticleDTO>();
-
-                if (article == null)
-                    return BadRequest("Article non lisible depuis API.");
-
-                if (article.QuantiteStock < cartItem.Quantity)
-                    return BadRequest(
-                        $"❌ Stock insuffisant pour '{article.Nom}'. " +
-                        $"Stock restant : {article.QuantiteStock}"
-                    );
-            }
-
-            // ============================================
-            // ⭐ 2) Création de la commande locale
-            // ============================================
-            var order = new Order
-            {
-                ClientId = clientId,
-                OrderDate = DateTime.Now,
-                TotalAmount = cart.Items.Sum(i => i.UnitPrice * i.Quantity),
-                Items = cart.Items.Select(i => new OrderItem
-                {
-                    ArticleId = i.ArticleId,
-                    Quantity = i.Quantity,
-                    UnitPrice = i.UnitPrice
-                }).ToList()
-            };
-
-            _context.Orders.Add(order);
-
-            // ============================================
-            // ⭐ 3) Diminuer le stock dans ArticlesAPI
-            // ============================================
-            foreach (var cartItem in cart.Items)
-            {
-                string urlDecrease = $"{ARTICLES_URL}/{cartItem.ArticleId}/decrease-stock";
-                await _http.PutAsJsonAsync(urlDecrease, cartItem.Quantity);
-            }
-
-            // ============================================
-            // ⭐ 4) Vider le panier local
-            // ============================================
-            _context.CartItems.RemoveRange(cart.Items);
-
-            await _context.SaveChangesAsync();
-
-            return Ok(order);
-        }
-
-        // ⭐ COMMANDES DE L’UTILISATEUR
+        [Authorize(Roles = "Client")]
         [HttpGet("me")]
-        public async Task<ActionResult<IEnumerable<Order>>> GetMyOrders()
+        public async Task<IActionResult> GetMyOrders()
         {
-            string? userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userIdString))
-                return Unauthorized();
-
-            int clientId = int.Parse(userIdString);
+            int clientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
             var orders = await _context.Orders
                 .Include(o => o.Items)
@@ -124,6 +36,93 @@ namespace OrdersAPI.Controllers
                 .ToListAsync();
 
             return Ok(orders);
+        }
+
+        // ================= ADMIN =================
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var orders = await _context.Orders
+                .Include(o => o.Items)
+                .OrderByDescending(o => o.OrderDate)
+                .ToListAsync();
+
+            return Ok(orders);
+        }
+
+        // ================= CHECKOUT =================
+
+        [Authorize(Roles = "Client")]
+        [HttpPost("checkout")]
+        public async Task<IActionResult> Checkout([FromBody] CheckoutDto dto)
+        {
+            if (dto == null || dto.Items == null || !dto.Items.Any())
+                return BadRequest("Votre panier est vide.");
+
+            int clientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            var order = new Order
+            {
+                ClientId = clientId,
+                OrderDate = DateTime.Now,
+                TotalAmount = 0,
+                PaymentMethod = dto.PaymentMethod,
+                PaymentStatus = "Pending",
+                Items = new List<OrderItem>()
+            };
+
+            foreach (var item in dto.Items)
+            {
+                if (item.Quantity <= 0)
+                    return BadRequest($"Quantité invalide pour l'article {item.ArticleId}");
+
+                // ======================
+                // 🏷 Récupération du prix ArticlesAPI
+                // (optionnel, décommenter si tu veux)
+                // ======================
+                /*
+                var token = Request.Headers["Authorization"].ToString();
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token.Replace("Bearer ", ""));
+
+                var priceResponse = await _httpClient.GetAsync(
+                    $"https://localhost:7053/gateway/articles/{item.ArticleId}"
+                );
+
+                if (!priceResponse.IsSuccessStatusCode)
+                    return BadRequest($"Impossible de récupérer le prix de l'article {item.ArticleId}");
+
+                var article = await priceResponse.Content.ReadFromJsonAsync<ArticleDto>();
+                decimal realPrice = article.Price;
+                */
+
+                // ======================
+                // 🚧 version simplifiée : DTO contient déjà le prix
+                // ======================
+                decimal realPrice = item.UnitPrice;
+
+                order.Items.Add(new OrderItem
+                {
+                    ArticleId = item.ArticleId,
+                    Quantity = item.Quantity,
+                    UnitPrice = realPrice
+                });
+
+                order.TotalAmount += realPrice * item.Quantity;
+            }
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                Message = "Commande validée avec succès ✅",
+                OrderId = order.Id,
+                TotalAmount = order.TotalAmount,
+                PaymentStatus = order.PaymentStatus
+            });
         }
     }
 }

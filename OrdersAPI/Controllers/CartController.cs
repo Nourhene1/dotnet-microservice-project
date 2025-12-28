@@ -5,38 +5,27 @@ using OrdersAPI.Data;
 using OrdersAPI.DTOs;
 using OrdersAPI.Models;
 using System.Security.Claims;
-using System.Net.Http.Json;
 
 namespace OrdersAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Client")]
     public class CartController : ControllerBase
     {
         private readonly OrdersDbContext _context;
-        private readonly HttpClient _http;
 
-        // URL du service Articles
-        private const string ARTICLES_URL = "https://localhost:7123/api/Article";
-
-        public CartController(OrdersDbContext context, IHttpClientFactory httpFactory)
+        public CartController(OrdersDbContext context)
         {
             _context = context;
-            _http = httpFactory.CreateClient();
         }
 
-        // ======================================================
-        // 🛒 GET PANIER DU CLIENT CONNECTÉ
-        // ======================================================
-        [HttpGet("me")]
-        public async Task<ActionResult<Cart>> GetMyCart()
+        // Récupérer le panier du client connecté
+        [HttpGet]
+        public async Task<IActionResult> GetMyCart()
         {
-            string userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userIdString))
-                return Unauthorized();
-
-            int clientId = int.Parse(userIdString);
+            int clientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            string email = User.FindFirstValue(ClaimTypes.Email);
 
             var cart = await _context.Carts
                 .Include(c => c.Items)
@@ -47,7 +36,7 @@ namespace OrdersAPI.Controllers
                 cart = new Cart
                 {
                     ClientId = clientId,
-                    Items = new List<CartItem>()
+                    ClientEmail = email
                 };
                 _context.Carts.Add(cart);
                 await _context.SaveChangesAsync();
@@ -56,49 +45,33 @@ namespace OrdersAPI.Controllers
             return Ok(cart);
         }
 
-        // ======================================================
-        // 🛒 AJOUT ARTICLE AU PANIER
-        // ======================================================
-        [HttpPost("me/add")]
-        public async Task<ActionResult> AddItem([FromBody] CartItemCreateDto dto)
+        // Ajouter un article au panier
+        [HttpPost("items")]
+        public async Task<IActionResult> AddItem([FromBody] AddCartItemDto dto)
         {
-            string userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userIdString))
-                return Unauthorized();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            int clientId = int.Parse(userIdString);
+            int clientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            string email = User.FindFirstValue(ClaimTypes.Email);
 
-            // 👉 Charger panier
             var cart = await _context.Carts
                 .Include(c => c.Items)
                 .FirstOrDefaultAsync(c => c.ClientId == clientId);
 
             if (cart == null)
             {
-                cart = new Cart { ClientId = clientId };
+                cart = new Cart
+                {
+                    ClientId = clientId,
+                    ClientEmail = email
+                };
                 _context.Carts.Add(cart);
             }
 
-            // 👉 Vérifier stock réel côté ArticlesAPI
-            var resp = await _http.GetAsync($"{ARTICLES_URL}/{dto.ArticleId}");
-            if (!resp.IsSuccessStatusCode)
-                return BadRequest("Article introuvable côté stock");
-
-            var article = await resp.Content.ReadFromJsonAsync<ArticleDTO>();
-            if (article == null)
-                return BadRequest("Impossible de lire l'article");
-
-            // 👉 Vérifier capacité
-            if (dto.Quantity > article.QuantiteStock)
-                return BadRequest($"Stock insuffisant ({article.QuantiteStock})");
-
             var existingItem = cart.Items.FirstOrDefault(i => i.ArticleId == dto.ArticleId);
-
             if (existingItem != null)
             {
-                if (existingItem.Quantity + dto.Quantity > article.QuantiteStock)
-                    return BadRequest($"Stock insuffisant pour augmenter (Stock dispo = {article.QuantiteStock})");
-
                 existingItem.Quantity += dto.Quantity;
             }
             else
@@ -106,84 +79,68 @@ namespace OrdersAPI.Controllers
                 cart.Items.Add(new CartItem
                 {
                     ArticleId = dto.ArticleId,
-                    Quantity = dto.Quantity,
+                    ArticleName = dto.ArticleName,
                     UnitPrice = dto.UnitPrice,
+                    Quantity = dto.Quantity
                 });
             }
 
             await _context.SaveChangesAsync();
-            return Ok("Ajout au panier réussi !");
+            return Ok(cart);
         }
 
-        // ======================================================
-        // ➕ AUGMENTER QUANTITÉ
-        // ======================================================
-        [HttpPut("inc/{articleId}")]
-        public async Task<IActionResult> IncreaseItem(int articleId)
+        // Modifier la quantité
+        [HttpPut("items/{itemId}")]
+        public async Task<IActionResult> UpdateItem(int itemId, [FromBody] UpdateCartItemDto dto)
         {
-            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userIdString))
-                return Unauthorized();
+            int clientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-            int clientId = int.Parse(userIdString);
+            var item = await _context.CartItems
+                .Include(i => i.Cart)
+                .FirstOrDefaultAsync(i => i.Id == itemId && i.Cart!.ClientId == clientId);
+
+            if (item == null)
+                return NotFound();
+
+            item.Quantity = dto.Quantity;
+            await _context.SaveChangesAsync();
+            return Ok(item);
+        }
+
+        // Supprimer une ligne du panier
+        [HttpDelete("items/{itemId}")]
+        public async Task<IActionResult> DeleteItem(int itemId)
+        {
+            int clientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            var item = await _context.CartItems
+                .Include(i => i.Cart)
+                .FirstOrDefaultAsync(i => i.Id == itemId && i.Cart!.ClientId == clientId);
+
+            if (item == null)
+                return NotFound();
+
+            _context.CartItems.Remove(item);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        // Vider le panier
+        [HttpDelete("clear")]
+        public async Task<IActionResult> ClearCart()
+        {
+            int clientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
             var cart = await _context.Carts
                 .Include(c => c.Items)
                 .FirstOrDefaultAsync(c => c.ClientId == clientId);
 
             if (cart == null)
-                return NotFound("Panier introuvable");
+                return NoContent();
 
-            var item = cart.Items.FirstOrDefault(i => i.ArticleId == articleId);
-            if (item == null)
-                return NotFound("Article introuvable dans panier");
-
-            // 👉 Vérifier le stock API avant d'augmenter
-            var resp = await _http.GetAsync($"{ARTICLES_URL}/{articleId}");
-            if (!resp.IsSuccessStatusCode)
-                return BadRequest("Erreur stock API");
-
-            var article = await resp.Content.ReadFromJsonAsync<ArticleDTO>();
-            if (item.Quantity + 1 > article.QuantiteStock)
-                return BadRequest($"❌ Stock insuffisant (max = {article.QuantiteStock})");
-
-            item.Quantity++;
+            _context.CartItems.RemoveRange(cart.Items);
             await _context.SaveChangesAsync();
-
-            return Ok();
-        }
-
-        // ======================================================
-        // ➖ DIMINUER QUANTITÉ
-        // ======================================================
-        [HttpPut("dec/{articleId}")]
-        public async Task<IActionResult> DecreaseItem(int articleId)
-        {
-            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userIdString))
-                return Unauthorized();
-
-            int clientId = int.Parse(userIdString);
-
-            var cart = await _context.Carts
-                .Include(c => c.Items)
-                .FirstOrDefaultAsync(c => c.ClientId == clientId);
-
-            if (cart == null)
-                return NotFound("Panier introuvable");
-
-            var item = cart.Items.FirstOrDefault(i => i.ArticleId == articleId);
-            if (item == null)
-                return NotFound("Article introuvable dans panier");
-
-            if (item.Quantity > 1)
-                item.Quantity--;
-            else
-                _context.CartItems.Remove(item);
-
-            await _context.SaveChangesAsync();
-
-            return Ok();
+            return NoContent();
         }
     }
 }

@@ -1,12 +1,7 @@
-﻿namespace OrdersAPI.Models
+﻿namespace OrdersAPI.DTOs
 {
-    public class CartItem
+    public class CheckoutItemDto
     {
-        public int Id { get; set; }
-
-        public int CartId { get; set; }
-        public Cart? Cart { get; set; }
-
         public int ArticleId { get; set; }
         public string ArticleName { get; set; } = string.Empty;
         public decimal UnitPrice { get; set; }
