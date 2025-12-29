@@ -210,8 +210,7 @@
         "AuthenticationProviderKey": "Bearer"
       },
       "UpstreamHttpMethod": [ "GET" ]
-    }
-,
+    },
     {
       "UpstreamPathTemplate": "/gateway/cart/me/add",
       "DownstreamPathTemplate": "/api/Cart/me/add",
