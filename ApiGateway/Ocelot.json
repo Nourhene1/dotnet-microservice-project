@@ -165,96 +165,74 @@
     },
 
     /* ====================== ORDERSAPI (TON NOUVEAU MICRO SERVICE) ====================== */
+    {
+      "UpstreamPathTemplate": "/gateway/cart",
+      "DownstreamPathTemplate": "/api/Cart",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7019
+        }
+      ],
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/cart/items",
+      "DownstreamPathTemplate": "/api/Cart/items",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7019
+        }
+      ],
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/cart/items/{itemId}",
+      "DownstreamPathTemplate": "/api/Cart/items/{itemId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7019
+        }
+      ],
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/cart/clear",
+      "DownstreamPathTemplate": "/api/Cart/clear",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7019
+        }
+      ],
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+      "UpstreamHttpMethod": [ "DELETE" ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/orders/checkout",
+      "UpstreamHttpMethod": [ "POST" ],
 
-    {
-      "UpstreamPathTemplate": "/gateway/orders/me",
-      "DownstreamPathTemplate": "/api/orders/me",
+      "DownstreamPathTemplate": "/api/Orders/checkout",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "7087"
-        } // ⬅️ METS TON PORT HTTPS OrdersAPI
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/orders/create-from-cart",
-      "DownstreamPathTemplate": "/api/orders/me/create-from-cart",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "7087"
-        } // ⬅️ METS TON PORT
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/cart/me",
-      "DownstreamPathTemplate": "/api/Cart/me",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "7087"
+          "Port": 7019
         }
       ],
+
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/cart/me/add",
-      "DownstreamPathTemplate": "/api/Cart/me/add",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "7087"
-        } // ⬅️ METS TON PORT
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/cart/inc/{articleId}",
-      "DownstreamPathTemplate": "/api/Cart/inc/{articleId}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "7087"
-        }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "PUT" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/cart/dec/{articleId}",
-      "DownstreamPathTemplate": "/api/Cart/dec/{articleId}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "7087"
-        }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "PUT" ]
+      }
     }
 
   ],

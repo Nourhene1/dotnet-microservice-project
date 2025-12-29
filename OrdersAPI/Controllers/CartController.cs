@@ -20,7 +20,7 @@ namespace OrdersAPI.Controllers
             _context = context;
         }
 
-        // Récupérer le panier du client connecté
+        // ✅ GET api/Cart
         [HttpGet]
         public async Task<IActionResult> GetMyCart()
         {
@@ -36,8 +36,10 @@ namespace OrdersAPI.Controllers
                 cart = new Cart
                 {
                     ClientId = clientId,
-                    ClientEmail = email
+                    ClientEmail = email,
+                    Items = new List<CartItem>()
                 };
+
                 _context.Carts.Add(cart);
                 await _context.SaveChangesAsync();
             }
@@ -45,7 +47,7 @@ namespace OrdersAPI.Controllers
             return Ok(cart);
         }
 
-        // Ajouter un article au panier
+        // ✅ POST api/Cart/items
         [HttpPost("items")]
         public async Task<IActionResult> AddItem([FromBody] AddCartItemDto dto)
         {
@@ -64,12 +66,16 @@ namespace OrdersAPI.Controllers
                 cart = new Cart
                 {
                     ClientId = clientId,
-                    ClientEmail = email
+                    ClientEmail = email,
+                    Items = new List<CartItem>()
                 };
+
                 _context.Carts.Add(cart);
             }
 
-            var existingItem = cart.Items.FirstOrDefault(i => i.ArticleId == dto.ArticleId);
+            var existingItem = cart.Items
+                .FirstOrDefault(i => i.ArticleId == dto.ArticleId);
+
             if (existingItem != null)
             {
                 existingItem.Quantity += dto.Quantity;
@@ -89,25 +95,32 @@ namespace OrdersAPI.Controllers
             return Ok(cart);
         }
 
-        // Modifier la quantité
+        // ✅ PUT api/Cart/items/{itemId}
         [HttpPut("items/{itemId}")]
-        public async Task<IActionResult> UpdateItem(int itemId, [FromBody] UpdateCartItemDto dto)
+        public async Task<IActionResult> UpdateItem(
+            int itemId,
+            [FromBody] UpdateCartItemDto dto)
         {
             int clientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
             var item = await _context.CartItems
                 .Include(i => i.Cart)
-                .FirstOrDefaultAsync(i => i.Id == itemId && i.Cart!.ClientId == clientId);
+                .FirstOrDefaultAsync(i =>
+                    i.Id == itemId &&
+                    i.Cart != null &&
+                    i.Cart.ClientId == clientId
+                );
 
             if (item == null)
-                return NotFound();
+                return NotFound("Item introuvable.");
 
             item.Quantity = dto.Quantity;
             await _context.SaveChangesAsync();
+
             return Ok(item);
         }
 
-        // Supprimer une ligne du panier
+        // ✅ DELETE api/Cart/items/{itemId}
         [HttpDelete("items/{itemId}")]
         public async Task<IActionResult> DeleteItem(int itemId)
         {
@@ -115,17 +128,22 @@ namespace OrdersAPI.Controllers
 
             var item = await _context.CartItems
                 .Include(i => i.Cart)
-                .FirstOrDefaultAsync(i => i.Id == itemId && i.Cart!.ClientId == clientId);
+                .FirstOrDefaultAsync(i =>
+                    i.Id == itemId &&
+                    i.Cart != null &&
+                    i.Cart.ClientId == clientId
+                );
 
             if (item == null)
-                return NotFound();
+                return NotFound("Item introuvable.");
 
             _context.CartItems.Remove(item);
             await _context.SaveChangesAsync();
+
             return NoContent();
         }
 
-        // Vider le panier
+        // ✅ DELETE api/Cart/clear
         [HttpDelete("clear")]
         public async Task<IActionResult> ClearCart()
         {
@@ -135,11 +153,12 @@ namespace OrdersAPI.Controllers
                 .Include(c => c.Items)
                 .FirstOrDefaultAsync(c => c.ClientId == clientId);
 
-            if (cart == null)
+            if (cart == null || !cart.Items.Any())
                 return NoContent();
 
             _context.CartItems.RemoveRange(cart.Items);
             await _context.SaveChangesAsync();
+
             return NoContent();
         }
     }
