@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,40 +10,44 @@ var builder = WebApplication.CreateBuilder(args);
 // ================== CORS ==================
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend",
-        policy =>
-            policy.WithOrigins("http://localhost:5173")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod()
-    );
+	options.AddPolicy("AllowFrontend",
+		policy =>
+			policy.WithOrigins("http://localhost:5173")
+				  .AllowAnyHeader()
+				  .AllowAnyMethod()
+	);
 });
 
 // ================== SERVICES ==================
 builder.Services.AddControllers();
 
-// 🔐 JWT Auth for Gateway
+// 🔐 JWT Auth for Gateway (🔥 FIX ICI 🔥)
 builder.Services
-    .AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
-    {
-        options.RequireHttpsMetadata = false;
+	.AddAuthentication("Bearer")
+	.AddJwtBearer("Bearer", options =>
+	{
+		options.RequireHttpsMetadata = false;
 
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+		options.TokenValidationParameters = new TokenValidationParameters
+		{
+			ValidateIssuer = true,
+			ValidIssuer = builder.Configuration["Jwt:Issuer"],
 
-            ValidateAudience = true,
-            ValidAudience = builder.Configuration["Jwt:Audience"],
+			ValidateAudience = true,
+			ValidAudience = builder.Configuration["Jwt:Audience"],
 
-            ValidateLifetime = true,
+			ValidateLifetime = true,
+			ValidateIssuerSigningKey = true,
 
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])
-            )
-        };
-    });
+			IssuerSigningKey = new SymmetricSecurityKey(
+				Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])
+			),
+
+			// 🔥🔥🔥 OBLIGATOIRE 🔥🔥🔥
+			RoleClaimType = ClaimTypes.Role,
+			NameClaimType = ClaimTypes.NameIdentifier
+		};
+	});
 
 builder.Services.AddAuthorization();
 
@@ -59,24 +64,23 @@ var app = builder.Build();
 // ================== MIDDLEWARE ==================
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+	app.UseSwagger();
+	app.UseSwaggerUI();
 }
 
-// ❌ نحّيوها في dev (تعمل redirect وتكسر CORS)
+// ❌ PAS DE HTTPS REDIRECT EN DEV
 // app.UseHttpsRedirection();
 
-// ✅ CORS لازم يكون قبل auth
 app.UseCors("AllowFrontend");
 
 // 🔐 Auth
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Controllers (اختياري في Gateway)
+// Facultatif
 app.MapControllers();
 
-// 🚪 Ocelot LAST
+// 🚪 Ocelot DOIT être dernier
 await app.UseOcelot();
 
 app.Run();

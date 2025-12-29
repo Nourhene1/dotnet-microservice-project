@@ -8,7 +8,7 @@
         public Order? Order { get; set; }
 
         public int ArticleId { get; set; }     // vient d'ArticlesAPI
-        public string ArticleName { get; set; } = string.Empty; // snapshot
+       public string ArticleName { get; set; } = string.Empty; // snapshot
         public decimal UnitPrice { get; set; }
         public int Quantity { get; set; }
 

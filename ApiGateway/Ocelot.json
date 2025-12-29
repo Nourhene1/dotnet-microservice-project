@@ -4,6 +4,7 @@
     /* ====================== CLIENTS ====================== */
     {
       "UpstreamPathTemplate": "/gateway/clients",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
       "DownstreamPathTemplate": "/api/Client",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -12,13 +13,11 @@
           "Port": 7270
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
     },
     {
       "UpstreamPathTemplate": "/gateway/clients/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "DownstreamPathTemplate": "/api/Client/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -27,13 +26,13 @@
           "Port": 7270
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
     },
+
+    /* ====================== PROFILE ====================== */
     {
       "UpstreamPathTemplate": "/gateway/profile/me",
+      "UpstreamHttpMethod": [ "GET", "PUT" ],
       "DownstreamPathTemplate": "/api/profile/me",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -42,15 +41,13 @@
           "Port": 7270
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "GET", "PUT" ]
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
     },
 
     /* ====================== RECLAMATIONS ====================== */
     {
       "UpstreamPathTemplate": "/gateway/reclamations",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
       "DownstreamPathTemplate": "/api/Reclamation",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -59,13 +56,11 @@
           "Port": 7270
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
     },
     {
       "UpstreamPathTemplate": "/gateway/reclamations/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "DownstreamPathTemplate": "/api/Reclamation/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -74,15 +69,13 @@
           "Port": 7270
         }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
     },
 
     /* ====================== ARTICLES ====================== */
     {
       "UpstreamPathTemplate": "/gateway/articles",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
       "DownstreamPathTemplate": "/api/Article",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -90,11 +83,11 @@
           "Host": "localhost",
           "Port": 7123
         }
-      ],
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      ]
     },
     {
       "UpstreamPathTemplate": "/gateway/articles/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "DownstreamPathTemplate": "/api/Article/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -102,25 +95,93 @@
           "Host": "localhost",
           "Port": 7123
         }
+      ]
+    },
+
+    /* ====================== AUTH ====================== */
+    {
+      "UpstreamPathTemplate": "/gateway/auth/login",
+      "UpstreamHttpMethod": [ "POST", "OPTIONS" ],
+      "DownstreamPathTemplate": "/api/Auth/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7273
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/auth/register",
+      "UpstreamHttpMethod": [ "POST", "OPTIONS" ],
+      "DownstreamPathTemplate": "/api/Auth/register",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7273
+        }
+      ]
+    },
+
+    /* ====================== CART ====================== */
+    {
+      "UpstreamPathTemplate": "/gateway/cart",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Cart",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7019
+        }
       ],
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/cart/items",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Cart/items",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7019
+        }
+      ],
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/cart/items/{itemId}",
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/Cart/items/{itemId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7019
+        }
+      ],
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/cart/clear",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/api/Cart/clear",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7019
+        }
+      ],
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
     },
 
     /* ====================== INTERVENTIONS ====================== */
     {
       "UpstreamPathTemplate": "/gateway/interventions",
-      "DownstreamPathTemplate": "/api/Intervention",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7276
-        }
-      ],
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/interventions",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
       "DownstreamPathTemplate": "/api/Intervention",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -131,11 +192,11 @@
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "POST" ]
+      }
     },
     {
       "UpstreamPathTemplate": "/gateway/interventions/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "DownstreamPathTemplate": "/api/Intervention/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -146,28 +207,14 @@
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
-      },
-      "UpstreamHttpMethod": [ "PUT", "DELETE" ]
+      }
     },
 
-    /* ====================== AUTH ====================== */
+    /* ====================== ORDERS ====================== */
     {
-      "UpstreamPathTemplate": "/gateway/auth/{everything}",
-      "DownstreamPathTemplate": "/api/Auth/{everything}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7273
-        }
-      ],
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-
-    /* ====================== ORDERSAPI (TON NOUVEAU MICRO SERVICE) ====================== */
-    {
-      "UpstreamPathTemplate": "/gateway/cart",
-      "DownstreamPathTemplate": "/api/Cart",
+      "UpstreamPathTemplate": "/gateway/orders/me",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Orders/me",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -175,52 +222,11 @@
           "Port": 7019
         }
       ],
-      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/cart/items",
-      "DownstreamPathTemplate": "/api/Cart/items",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7019
-        }
-      ],
-      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/cart/items/{itemId}",
-      "DownstreamPathTemplate": "/api/Cart/items/{itemId}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7019
-        }
-      ],
-      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
-      "UpstreamHttpMethod": [ "PUT", "DELETE" ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/cart/clear",
-      "DownstreamPathTemplate": "/api/Cart/clear",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7019
-        }
-      ],
-      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
-      "UpstreamHttpMethod": [ "DELETE" ]
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
     },
     {
       "UpstreamPathTemplate": "/gateway/orders/checkout",
       "UpstreamHttpMethod": [ "POST" ],
-
       "DownstreamPathTemplate": "/api/Orders/checkout",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -229,10 +235,7 @@
           "Port": 7019
         }
       ],
-
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
+      "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
     }
 
   ],

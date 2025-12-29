@@ -23,7 +23,7 @@ namespace OrdersAPI.Controllers
 
         // ================= CLIENT =================
 
-        [Authorize(Roles = "Client")]
+        [Authorize]
         [HttpGet("me")]
         public async Task<IActionResult> GetMyOrders()
         {

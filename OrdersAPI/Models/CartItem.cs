@@ -1,15 +1,16 @@
-﻿namespace OrdersAPI.Models
+﻿using OrdersAPI.Models;
+using System.Text.Json.Serialization;
+
+public class CartItem
 {
-    public class CartItem
-    {
-        public int Id { get; set; }
+	public int Id { get; set; }
 
-        public int CartId { get; set; }
-        public Cart? Cart { get; set; }
+	public int CartId { get; set; }
 
-        public int ArticleId { get; set; }
-        public string ArticleName { get; set; } = string.Empty;
-        public decimal UnitPrice { get; set; }
-        public int Quantity { get; set; }
-    }
+	[JsonIgnore]   // ⬅️ LIGNE MAGIQUE
+	public Cart? Cart { get; set; }
+
+	public int ArticleId { get; set; }
+	public decimal UnitPrice { get; set; }
+	public int Quantity { get; set; }
 }

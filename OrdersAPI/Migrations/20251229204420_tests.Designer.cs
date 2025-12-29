@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OrdersAPI.Data;
 
@@ -11,9 +12,11 @@ using OrdersAPI.Data;
 namespace OrdersAPI.Migrations
 {
     [DbContext(typeof(OrdersDbContext))]
-    partial class OrdersDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251229204420_tests")]
+    partial class tests
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,23 @@ namespace OrdersAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CartItem", b =>
+            modelBuilder.Entity("OrdersAPI.Models.Cart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("OrdersAPI.Models.CartItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,22 +66,6 @@ namespace OrdersAPI.Migrations
                     b.HasIndex("CartId");
 
                     b.ToTable("CartItems");
-                });
-
-            modelBuilder.Entity("OrdersAPI.Models.Cart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("OrdersAPI.Models.Order", b =>
@@ -154,7 +157,7 @@ namespace OrdersAPI.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("CartItem", b =>
+            modelBuilder.Entity("OrdersAPI.Models.CartItem", b =>
                 {
                     b.HasOne("OrdersAPI.Models.Cart", "Cart")
                         .WithMany("Items")

@@ -21,12 +21,27 @@ namespace ClientsAPI.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            return Ok(await _context.Reclamations.Include(r => r.Client).ToListAsync());
-        }
-        [Authorize]
+		[HttpGet]
+		public async Task<IActionResult> GetAll()
+		{
+			var data = await _context.Reclamations
+				.Include(r => r.Client)
+				.Select(r => new
+				{
+					r.Id,
+					r.Objet,
+					r.Description,        // ✅ AJOUTÉ
+					r.DateReclamation,    // ✅ AJOUTÉ
+					r.Etat,
+					ClientName = r.Client.Prenom + " " + r.Client.Nom
+				})
+				.ToListAsync();
+
+			return Ok(data);
+		}
+
+
+		[Authorize]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ReclamationCreateDto dto)
         {

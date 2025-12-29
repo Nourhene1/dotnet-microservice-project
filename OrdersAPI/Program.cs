@@ -30,30 +30,40 @@ builder.Services.AddDbContext<OrdersDbContext>(options =>
 
 // 🔥 Authentification JWT (1 seule fois !)
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.RequireHttpsMetadata = false;
+	.AddJwtBearer(options =>
+	{
+		options.RequireHttpsMetadata = false;
+		options.TokenValidationParameters = new TokenValidationParameters
+		{
+			ValidateIssuer = true,
+			ValidIssuer = builder.Configuration["Jwt:Issuer"],
+			ValidateAudience = true,
+			ValidAudience = builder.Configuration["Jwt:Audience"],
+			ValidateLifetime = true,
+			ValidateIssuerSigningKey = true,
+			IssuerSigningKey = new SymmetricSecurityKey(
+				Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])
+			),
+			NameClaimType = ClaimTypes.NameIdentifier, // ✅ Pour HttpContext.User.Identity.Name
+			RoleClaimType = ClaimTypes.Role            // ✅ Pour HttpContext.User.IsInRole()
+		};
 
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-
-            ValidateAudience = true,
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-
-            ValidateLifetime = true,
-
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])
-            ),
-
-            // 🔥 LIGNES QUI MANQUAIENT
-            NameClaimType = ClaimTypes.NameIdentifier,
-            RoleClaimType = ClaimTypes.Role
-        };
-    });
+		// 🔥 AJOUTEZ CETTE PARTIE POUR DEBUG
+		options.Events = new JwtBearerEvents
+		{
+			OnAuthenticationFailed = context =>
+			{
+				Console.WriteLine($"❌ JWT Auth Failed: {context.Exception.Message}");
+				return Task.CompletedTask;
+			},
+			OnTokenValidated = context =>
+			{
+				var claims = context.Principal?.Claims.Select(c => $"{c.Type}: {c.Value}");
+				Console.WriteLine($"✅ JWT Valid! Claims: {string.Join(", ", claims ?? new string[0])}");
+				return Task.CompletedTask;
+			}
+		};
+	});
 
 
 
@@ -88,7 +98,7 @@ builder.Services.AddSwaggerGen(c =>
 		}
 	});
 });
-
+builder.Services.AddHttpClient();
 var app = builder.Build();
 
 // ===================== Pipeline =====================
